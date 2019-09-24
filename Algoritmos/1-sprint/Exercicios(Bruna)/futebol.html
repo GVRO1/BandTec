@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Quantidade de ingressos de estudante vendidos:
+    <input id="qtdIngressoEstudante" autofocus /> <br />
+    Quantidade de ingressos normais:
+    <input id="qtdIngressoNormal" /><br />
+    Valor ingresso comum:<input id="valorIngressoComum" />
+    <button onclick="calcularArrecadação()">Amo meu time</button>
+
+    <script>
+      function calcularArrecadação() {
+        var valorTotal =
+          (valorIngressoComum.value * qtdIngressoEstudante.value) / 2 +
+          qtdIngressoNormal.value * valorIngressoComum.value;
+
+        alert(`A arrecadação foi de R$${valorTotal}`);
+      }
+    </script>
+  </body>
+</html>

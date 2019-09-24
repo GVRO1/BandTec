@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu salário: <input type="text" id="salario">
+    <select id="desconto">
+        <option value="0.1">INSS</option>
+        <option value="0.2">IR</option>
+        <option value="0.05">VT</option>
+    </select>
+<br>
+<button onclick="descontar()">Ver desconto</button>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+function descontar(){
+var dinheiro = Number(salario.value);
+var total = dinheiro * Number(desconto.value);
+mensagem.innerHTML = `Valor desse desconto: R$${total.toFixed(2)}`;
+}
+</script>

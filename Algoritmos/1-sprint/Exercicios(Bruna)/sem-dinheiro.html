@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="resultado">
+      <img src="img/sem-dinheiro.jpg" alt="foto de um boneco sem dinheiro" />
+      <br />
+      <input type="text" id="dinheiro6meses" /> Quanto dinheiro terá em 3 meses
+      <br />
+      <input type="text" id="dinheiro3anos" /> Quanto dinheiro terá em 3 anos
+      <br />
+      <button onclick="calcularDinheiro()">Como Estarei no Futuro?</button>
+      <br />
+    </div>
+
+    <script>
+      function calcularDinheiro() {
+        resultado.innerHTML = `
+            <img src="img/dinheiro6meses.jpg" alt="pessoa com pouco dinheiro" /> 
+            o valor daqui a 6 meses será de R$ ${dinheiro6meses.value}
+            <br><br>
+            <img src="img/dinheiro3anos.jpg" alt="pessoa com muito dinheiro">
+            o valor daqui a 3 anos será de R$ ${dinheiro3anos.value}
+            <br>
+            `;
+      }
+    </script>
+  </body>
+</html>

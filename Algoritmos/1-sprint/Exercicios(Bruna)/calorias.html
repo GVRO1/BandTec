@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Quantos pães franceses você consumiu? <input id="paoFrances" /> <br />
+    Quantas casquinhas você consumiu? <input id="casquinha" /> <br />
+    Minutos de caminhada:
+    <input id="tempoCaminhado" /> <br />
+    Minutos de musculação:
+    <input id="musculacao" /><br />
+    <button onclick="calcularCalorias()">Calcula</button>
+
+    <script>
+      function calcularCalorias() {
+        var pao = paoFrances.value * 100;
+        var sorvete = casquinha.value * 300;
+        var caminhada = tempoCaminhado.value * 50;
+        var academia = musculacao.value * 30;
+        var caloriasTotais = pao + sorvete - (caminhada + academia);
+
+        alert(
+          `Entre calorias que ganhou e perdeu, seu saldo de calorias no dia é ${caloriasTotais}`
+        );
+      }
+    </script>
+  </body>
+</html>

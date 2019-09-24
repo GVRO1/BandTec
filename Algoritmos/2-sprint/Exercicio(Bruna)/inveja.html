@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="salario" /> Valor salário do irmão
+    <br />
+    <input type="text" id="qtdFicantes" /> Quantidade de ficantes br
+    <br />
+    <input type="text" id="qtdForas" /> Quantidade de foras
+    <br />
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+      function calcular() {
+        var valor = salario.value;
+        var ficantes = qtdFicantes.value;
+        var foras = qtdForas.value;
+
+        valor *= 1.1;
+        alert(`o valor do salário é ${valor}`);
+
+        ficantes++;
+        alert(`A quantidade de ficantes é ${ficantes}`);
+
+        foras--;
+        alert(`A quantidade de foras é ${foras}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Quanto guardar por mês: <input id="poupanca" autofocus />
+    <br />
+    <button onclick="calcularValores()">Ver Planejamento</button>
+    <div id="valorCarro"></div>
+    <div id="valorCasa"></div>
+    <div id="valorViagem"></div>
+
+    <script>
+      function calcularValores() {
+        var valorTotalCarro = 20000;
+        var valorTotalCasa = 300000;
+        var valorTotalViagem = 80000;
+        var anos = Number(12);
+
+        valorCarro.innerHTML = `Guardando ${
+          poupanca.value
+        } por mês, você conseguirá comprar o carro em ${valorTotalCarro /
+          poupanca.value} meses ou ${(
+          valorTotalCarro /
+          poupanca.value /
+          anos
+        ).toFixed(1)} anos <br>`;
+
+        valorCasa.innerHTML = `Guardando ${
+          poupanca.value
+        } por mês, você conseguirá comprar o carro em ${valorTotalCasa /
+          poupanca.value} meses ou ${(
+          valorTotalCarro /
+          poupanca.value /
+          anos
+        ).toFixed(1)} anos <br>`;
+
+        valorViagem.innerHTML = `Guardando ${poupanca.value}
+         por mês, você conseguirá comprar o carro em ${valorTotalViagem /
+           poupanca.value}. meses ou ${(
+          valorTotalCarro /
+          poupanca.value /
+          anos
+        ).toFixed(1)} anos <br>`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Minutos torneira 1 pingando: <input id="torneira1" /> <br />
+    Minutos torneira 2 pingando:
+    <input id="torneira2" /> <br />
+    Minutos torneira 3 pingando: <input id="torneira3" />
+    <button onclick="calcularDesperdicio()">Calculo desperdicio</button>
+
+    <script>
+      function calcularDesperdicio() {
+        var primTorneira = torneira1.value * 15;
+        var segTorneira = torneira2.value * 15;
+        var tercTorneira = torneira3.value * 15;
+        var desperdicioTotal = primTorneira + segTorneira + tercTorneira;
+
+        alert(`Suas 3 torneiras juntas gastam ${desperdicioTotal} Litros`);
+      }
+    </script>
+  </body>
+</html>

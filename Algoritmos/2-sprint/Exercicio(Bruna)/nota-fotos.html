@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="opiniao">
+        <input type="text" id="nota" /> Insira sua nota
+        <br />
+        <button onclick="opinarVo()">Opinião da avó</button>
+        <br />
+        <button onclick="opinarMae()">Opinião da mãe</button>
+       
+        
+          
+    <script>
+        function opinarVo() {
+            opiniao.innerHTML = `<img src="vovo-feliz.jpg"> <br> Muito bem, que neto inteligente tirou ${nota.value} `;
+        }
+          
+        function opinarMae() {
+            opiniao.innerHTML = ` <img src="mae-pistola.jpg"> <br> Não fez mais que tua obrigação com essa nota ${nota.value}`;
+        }
+    </script>
+</body>
+</html>

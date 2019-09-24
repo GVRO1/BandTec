@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="valor1" autofocus /> Valor cateto 1
+    <br />
+    <input type="text" id="valor2" /> Valor cateto 2
+    <br />
+    <button onclick="calcular()">Calcular hipotenusa</button>
+
+    <script>
+      function calcular() {
+        alert(` A hipotenusa é ${(valor1.value /= valor2.value)}`);
+      }
+    </script>
+  </body>
+</html>

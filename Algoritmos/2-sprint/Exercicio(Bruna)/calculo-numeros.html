@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="numero1" /> Insira o primeiro número
+      <br />
+      <input type="text" id="numero2" /> Insira o segundo número
+      <br />
+      <div id="resultado">
+        <button onclick="calcularSoma()" id="soma">Soma</button>
+        <br />
+        <button onclick="calcularDiferenca()" id="diferenca">Diferença</button>
+        <br />
+        <button onclick="calcularProduto()" id="produto">Produto</button>
+        <br />
+        <button onclick="calcularRazao()" id="razao">Razão</button>
+        <br />
+      </div>
+
+      <script>
+        function calcularSoma() {
+          resultado.innerHTML = `A soma entre os dois é de ${Number(
+            numero1.value
+          ) + Number(numero2.value)}`;
+        }
+        function calcularDiferenca() {
+          resultado.innerHTML = `A diferenca entre os dois é ${numero1.value -
+            numero2.value}`;
+        }
+        function calcularProduto() {
+          resultado.innerHTML = `O produto entre os dois é ${numero1.value *
+            numero2.value}`;
+        }
+        function calcularRazao() {
+          resultado.innerHTML = `o prpduto entre os dois é ${numero1.value /
+            numero2.value}`;
+        }
+      </script>
+    </div>
+  </body>
+</html>

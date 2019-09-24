@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nome do guerreiro: <input id="nomeGuerreiro" /> <br />
+    Nome do guerreiro 2: <input id="nomeGuerreiro2" /> <br />
+    KI normal do guerreiro:
+    <input id="numeroKI" /> <br />
+    <button onclick="calcularKI()">Ver KI em cada forma</button>
+
+    <script>
+      function calcularKI() {
+        alert(`O ${nomeGuerreiro.value} têm ${numeroKI.value} de KI`);
+        alert(`O ${nomeGuerreiro2.value} têm ${numeroKI.value} de KI`);
+      }
+    </script>
+  </body>
+</html>

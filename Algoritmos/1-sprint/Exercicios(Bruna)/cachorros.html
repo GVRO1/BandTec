@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Informe seu bairro: <input id="bairro" /> <br />
+    Informe o número de cachorros: <input id="qtdCachorro" /> <br />
+    <button onclick="mostrar()">Análise pet</button>
+    <div style="color: red; display: none" id="divMensagem"></div>
+    <script>
+      function mostrar() {
+        divMensagem.innerHTML = `você mora em <i style = "color: blue">${bairro.value}</i> e têm ${qtdCachorro.value} cachorros`;
+        divMensagem.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

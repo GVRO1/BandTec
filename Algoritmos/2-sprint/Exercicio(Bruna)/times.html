@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="futebol">
+      <button onclick="zoarSp()">São Paulo</button>
+      <button onclick="zoarPalmeiras()">Palmeiras</button>
+      <button onclick="zoarSantos()">Santos</button>
+      <button onclick="zoarCorinthians()">Corinthians</button>
+    </div>
+
+    <script>
+      function zoarSp() {
+        futebol.innerHTML = `<img src="img/saopaulo.jpg" style ="width: 600px; height:500px;" />`;
+      }
+      function zoarPalmeiras() {
+        futebol.innerHTML = `<img src="img/palmeiras.jpg" style ="width: 600px; height:500px;"/>`;
+      }
+      function zoarSantos() {
+        futebol.innerHTML = ` <img src="img/santos.jpg" style ="width: 600px; height:500px;"/>`;
+      }
+
+      function zoarCorinthians() {
+        futebol.innerHTML = `<img src="img/corinthians.jpg" style ="width: 600px; height:500px;"/>`;
+      }
+    </script>
+  </body>
+</html>

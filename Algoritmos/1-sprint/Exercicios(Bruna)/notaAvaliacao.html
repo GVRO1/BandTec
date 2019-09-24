@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nota avaliação continuada: <input id="avaliacaoCont" /> <br />
+    Nota avaliação semestral: <input id="avaliacaoSem" /> <br />
+    Nome do aluno: <input id="nome" />
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <script>
+      function calcularMedia() {
+        var cont = avaliacaoCont.value * 0.4;
+        var sem = avaliacaoSem.value * 0.6;
+        var mediaFinal = (cont * sem) / 2;
+
+        alert(` A média de ${nome.value} será de ${mediaFinal.toFixed(2)}`);
+      }
+    </script>
+  </body>
+</html>

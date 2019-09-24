@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Bairro: <input id="bairro" />
+    <br />
+    Cachorro: <input id="cachorro" />
+    <br />
+    <button onclick="qtdCachorro()">Cachorro</button>
+    <div id="casa"></div>
+
+    <script>
+      function qtdCachorro() {
+        casa.innerHTML = `<p style="color: red"> Você mora em ${bairro.value} e tem ${cachorro.value} cachorros</p>`;
+      }
+    </script>
+  </body>
+</html>
