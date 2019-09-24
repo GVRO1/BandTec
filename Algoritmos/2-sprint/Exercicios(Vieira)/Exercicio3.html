@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual seu saldo na conta? <input type="text" name="" id="saldo">
+    <button onclick="verificar()">Verificar finanças</button>
+    <span id="msg_zerada" style="display: none">Conta Zerada</span>
+    <span id="negativado" style="display: none; color:red">Está devendo!</span>
+    <span id="positivo" style="display: none; color:rgb(17, 0, 255)">Saldo positivo</span>
+    <span id="serasa" style="display: none;color:rgb(116, 3, 3)">Igual ao Corinthians: No SERASA!</span>
+</body>
+</html>
+<script>
+    function verificar(){
+        var saldo_number = Number(saldo.value);
+        if(saldo_number == 0){
+            msg_zerada.style.display = 'block';
+            positivo.style.display = 'none';
+            negativado.style.display = 'none';
+            serasa.style.display = 'none';
+        }
+        if(saldo_number < 0){
+            msg_zerada.style.display = 'none';
+            positivo.style.display = 'none';
+            negativado.style.display = 'block';
+            if(saldo_number <= -1000){
+                msg_zerada.style.display = 'none';
+                positivo.style.display = 'none';
+                serasa.style.display = 'block';
+        
+            }
+        }
+        
+        if(saldo_number > 0){
+            msg_zerada.style.display = 'none';
+            positivo.style.display = 'block';
+            negativado.style.display = 'none';
+            serasa.style.display = 'none';
+        
+        }
+    }
+</script>

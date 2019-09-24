@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua meta de economia?
+    <input type="text" name="" id="meta">
+    <br>
+    Quanto você tem guardado?
+    <input type="text" name="" id="guardado">
+    <br>
+    <button onclick="analisar()">Analisar economia</button>
+    <div id="alcançada"></div>
+    <div id="ultrapassada"></div>
+    <div id="forca"></div>
+</body>
+</html>
+<script>
+function analisar(){
+    var nMeta = Number(meta.value);
+    var nEconomia = Number(economia.value);
+    var excesso = nEconomia -nMeta;
+    if (meta == economia){
+        alcançada.innerHTML("Parabéns, meta alcançada!");
+    }
+    if (meta > economia){
+        ultrapaçada.innerHTML(`Meta ultrapaçada em ${excesso}`);
+    }
+    if (meta > economia){
+        ultrapaçada.innerHTML(`Meta ultrapaçada em ${excesso}`);
+    }
+}
+</script>

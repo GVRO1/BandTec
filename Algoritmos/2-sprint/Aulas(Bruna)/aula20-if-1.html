@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estruturas de decisão</title>
+</head>
+<body>
+    <h3>Estrutura de decisão: IF</h3>
+
+    Quanto pagou de multa na viagem?
+    <input type="text" id="multa">
+    <button onclick="viagem()">Ver Viagem</button>
+
+</body>
+</html>
+<script>
+function viagem() {
+    var valor_multa = Number(multa.value);
+
+    // dentro do "if" colocamos uma EXPRESSÃO LÓGICA
+    // ou seja, algo que só pode ser VERDADE ou MENTIRA
+    // SE o 'valor_multa' for maior que 0...
+    if (valor_multa > 0) {
+        // as instruções aqui dentro SOMENTE serão executadas
+        // SE 'valor_multa' for maior que 0
+        alert(`Você pagou multa de R$${valor_multa}`);
+    }
+
+    alert('Boa viagem!');
+}
+</script>

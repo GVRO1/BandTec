@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   Quanto você economizou: 
+   <input type="text" name="" id="economia">
+   <button onclick="comprar()">Poder de compra</button>
+   <div id="nada" style="display: none">Nada de compras</div>
+   <div id="praia"style="display: none">Viagem de ida e volta para Praia Grande</div>
+   <div id="moto"style="display: none">Uma boa moto usada</div>
+   <div id="bobagem"style="display: none">Mais alguma bobagem legal</div>
+</body>
+</html>
+<script>
+function comprar(){
+    var nEconomia = Number(economia.value);
+    if(nEconomia <= 0){
+    nada.style.display = 'block';
+    }
+    if(nEconomia > 0){
+        nada.style.display = 'none';
+        praia.style.display = 'block';
+        if(nEconomia > 100){
+            moto.style.display = 'block';
+            bobagem.style.display = 'none';
+            if(nEconomia > 4000){
+            bobagem.style.display = 'block';
+            }
+        }
+    }
+}
+</script>

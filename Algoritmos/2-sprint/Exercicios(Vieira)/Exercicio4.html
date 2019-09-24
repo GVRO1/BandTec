@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos filhos você tem? 
+    <input type="text" id="filhos">
+    <button onclick="analisar()">Analisar Familia</button>
+    <div id="tv" style="display: none">Não tem TV</div>
+    <div id="internet" style="display: none">Não tem internet</div>
+    <div id="videogame" style="display: none">Não tem videogame</div>
+    <div id="netflix" style="display: none">Não tem Netflix'</div>
+</body>
+</html>
+<script>
+function analisar(){
+    var N_filhos = Number(filhos.value)
+    if (N_filhos == 0){
+        tv.style.display='none';
+        internet.style.display='none';
+        videogame.style.display='none';
+        netflix.style.display='none';
+    }
+    if(N_filhos >= 1){
+        tv.style.display='block';
+        internet.style.display='none';
+        videogame.style.display='none';
+        netflix.style.display='none';
+        if(N_filhos >= 2){
+            internet.style.display='block';
+            videogame.style.display='none';
+            netflix.style.display='none';
+            if(N_filhos >= 3){
+                videogame.style.display='block';
+                netflix.style.display='none';
+                if(N_filhos >= 4){
+                    netflix.style.display='block';
+                }
+            }
+        }
+    }
+}
+</script>
