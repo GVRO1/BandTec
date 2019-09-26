@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Vida do lutador: <u id="vida">1000</u> <br>
+        <div id="botao1">
+        <button  onclick="apanhar()">Apanhar</button>
+    </div>
+    <div id="botao2">
+        <button onclick="concentrar()">Concentrar força</button>
+    </div>
+    <div id="mensagem"></div>
+
+</body>
+</html>
+<script>
+var nVida = 1000;
+function apanhar(){
+    nVida -=100;
+    vida.innerHTML = `${nVida}`;
+    if (nVida <= 0 ){
+        mensagem.innerHTML= `Lutador já era!`
+        botao1.innerHTML = "<button>Apanhar</button> "
+        botao2.innerHTML = "<button>Concentrar força</button> "
+    }
+else {
+    mensagem.innerHTML= `Lutador ainda vivo!`
+}
+}
+function concentrar(){
+    nVida += 10;
+    vida.innerHTML = `${nVida}`;
+}
+
+</script>

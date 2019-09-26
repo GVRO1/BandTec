@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Vida do lutador: <u id="vida">1000</u> <br>
+    <img id="anderson" style="height: 150px" src="https://s3.portalt5.com.br/imagens/anderson-silva-return-ufc-234.jpg?mtime=20181125123551" alt="">
+    <div id="botao1">
+        <button  onclick="apanhar()">Apanhar</button>
+    </div>
+    <div id="botao2">
+        <button onclick="concentrar()">Concentrar força</button>
+    </div>
+    <div id="mensagem"></div>
+
+</body>
+</html>
+<script>
+var nVida = 1000;
+function apanhar(){
+    nVida -=100;
+    vida.innerHTML = `${nVida}`;
+    if (nVida <= 0 ){
+        mensagem.innerHTML= `Lutador já era!`
+        botao1.innerHTML = "<button>Apanhar</button> "
+        botao2.innerHTML = "<button>Concentrar força</button> "
+        anderson.src="https://www.br104.com.br/wp-content/uploads/2019/05/cats-1.jpg"
+    }
+else {
+    mensagem.innerHTML= `Lutador ainda vivo!`
+}
+}
+function concentrar(){
+    nVida += nVida * 0.05;
+    vida.innerHTML = `${nVida}`;
+    if (nVida <= 0 ){
+        mensagem.innerHTML= `Lutador já era!`
+    }
+    else {
+        mensagem.innerHTML= `Lutador ainda vivo!`
+}
+}
+
+</script>

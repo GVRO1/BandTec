@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Valor guardado: R$<b id="valor">0.00</b>
+    <button onclick="guardar()">Guardar R$5,00</button>
+    <button onclick="gastar()">Gastar  R$10,00</button>
+    <div id="mensagem_padrao" style="color:blue; display: none"> Finanças OK!</div>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    var nValor = 0
+    function guardar(){
+        nValor += 5;
+        valor.innerHTML=`${nValor}`
+        mensagem_padrao.style.display = "block";
+        i_f()
+    }
+    function i_f(){
+        if(nValor < 0){
+        mensagem_padrao.innerHTML= " Finanças em perigo!";
+        mensagem_padrao.style.color = "red";
+        if(nValor < -20){
+            mensagem.innerHTML = "Quase um corinthians!";
+        }
+        else{
+            mensagem.innerHTML = " ";          
+        }
+        }
+        if(nValor > 0){
+            mensagem_padrao.innerHTML = "Finanças OK!";
+            if(nValor > 100){
+                mensagem.style.display = "block"
+                mensagem.innerHTML = "#ostentação";
+            }
+            else{
+                mensagem.innerHTML = " ";
+            }
+        }
+    }
+    function gastar(){
+        nValor -= 10;
+        valor.innerHTML=`${nValor}`
+        mensagem_padrao.style.display = "block";
+        i_f()
+    }    
+</script>
