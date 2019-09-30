@@ -179,3 +179,30 @@ color: white;
     color: white;
     display: inline-block;
 }
+
+.div_vazia{
+    width: 100%;
+    height: 220px;
+}
+.foto_bonita{
+    background-image: url("https://img.olx.com.br/images/51/512816101393901.jpg");
+    width: 100%;
+    height: 420px;
+}
+.destaque{
+    color: white;
+    text-align: center;
+    font-size: 300%;
+}
+.anuncio_foto{
+    width: 300px;
+}
+.anuncio{
+ /* Deixa na mesma linha */
+ display: inline-block ;
+ width: 300px;
+ border-style: double;
+ border-color: black;
+ border-width: 1px;
+ margin: 10px
+}
