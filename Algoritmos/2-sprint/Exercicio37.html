@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual foi sua nota para o ultimo atendimento?
+    <input type="text" name="" id="nota">
+    <button onclick="ver()">Ver atendimento</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+function ver(){
+    var notaN = Number(nota.value)
+    if (notaN < 0 || notaN > 10 ){
+        mensagem.innerHTML = 'Nota invalida'
+    }
+    if (notaN > 0 && notaN < 5 ){
+        mensagem.innerHTML = 'Não Aprovado'
+    }
+    if (notaN == 5  || notaN == 6 ){
+        mensagem.innerHTML = 'Neutro'
+    }
+    if (notaN > 6  && notaN <= 10 ){
+        mensagem.innerHTML = 'Aprovado'
+    }
+
+}
+</script>

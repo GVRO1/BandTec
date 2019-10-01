@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Tipo do passageiro: 
+    <select name="" id="passageiro">
+        <option value="comum">Comum</option>
+        <option value="estudante">Estudante</option>
+        <option value="idoso">Idoso/PNE</option>
+    </select>
+    <br>
+    Tipo de passagem:
+    <select id="passagem">
+        <option value="4">Passagem única</option>
+        <option value="5.50">Passagem integração</option>
+    </select>
+    <button onclick="simular()">Simular preço</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+function simular(){
+var integracao_estudante = Number(passageiro.value)/2;
+    if(passageiro.value == 'estudante' && passagem.value == 'integracao')){
+        mensagem.innerHTML = `<b>Valor da passagem escolhida: R$${integracao_estudante}</b>`
+    }
+
+    if(passageiro.value == 'idoso'){
+        mensagem.innerHTML = `<b>Valor da passagem escolhida: R$0,00</b>`
+    }
+    
+
+}
+</script>
