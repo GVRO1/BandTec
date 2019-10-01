@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+Login <br>
+<input type="text" id="login"> <br>
+Senha <br>
+<input type="password" name="" id="senha">
+<button onclick="entrar()">Entrar</button>
+
+</body>
+</html>
+<script>
+function entrar(){
+if (login.value == "bandtec" && senha.value == "digital"){
+alert("Usuário autenticado com sucesso")
+}
+else{
+    alert("Falha na autenticação");
+}
+}
+</script>

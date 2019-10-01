@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select id="alimentos">
+        <option value="boi">Carne Bovina</option>
+        <option value="soja">Soja</option>
+        <option value="porco">Carne suina</option>
+        <option value="legumes">Legumes</option>
+        <option value="peixe">Carne de peixe</option>
+        <option value="fruta">Frutas</option>
+        <option value="ovo">Ovos</option>
+    </select>
+    <button onclick = "alimentar()">Tipo de Alimentação</button>
+    <div style="display: none" id="Nvegano">Você não pode ser vegano</div>
+    <div style="display: none" id="Svegano">Você pode ser vegano</div>
+    <div style="display: none" id="vegetariano">Você pode ser vegetariano</div>
+</body>
+</html>
+<script>
+function alimentar(){
+    if(alimentos.value == 'boi' || alimentos.value == 'porco' || alimentos.value == 'peixe'){
+    Nvegano.style.display = 'block';    
+    Svegano.style.display = 'none';    
+    vegetariano.style.display = 'none';    
+    }
+    if(alimentos.value == 'soja' || alimentos.value == 'legumes'){
+    Nvegano.style.display = 'none';    
+    Svegano.style.display = 'block';    
+    vegetariano.style.display = 'none';    
+    }
+    if(alimentos.value == 'soja' || alimentos.value == 'legumes'|| alimentos.value == 'ovo'){
+    Svegano.style.display = 'block';    
+    Nvegano.style.display = 'none';    
+    vegetariano.style.display = 'block';    
+    }
+
+}
+</script>

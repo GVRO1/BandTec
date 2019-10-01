@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua idade? <input type="text" name="" id="idade"><br>
+    <button onclick="verificar()">Verificar sua idade</button>
+</body>
+</html>
+<script>
+function verificar(){
+var idadeN = Number(idade.value);
+if(idadeN <= 18 || idadeN >= 65){
+    alert("Seu voto é opcional");
+}
+else{
+    alert("Você é obrigado a votar");
+}
+}
+</script>

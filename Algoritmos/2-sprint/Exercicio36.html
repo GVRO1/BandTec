@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculador de cansaço do Aluno Bandtec</h1>
+    Meio de transporte
+    <select id="transporte">
+        <option value="onibus">Ônibus</option>
+        <option value="metro">Metrô</option>
+        <option value="carro">Carro</option>
+        <option value="bicicleta">Bicicleta</option>
+        <option value="lotacao">Lotação</option>
+    </select><br>
+    Qual a distância da sua casa a faculdade? <input type="text" name="" id="distancia">KM <br>
+
+    <button onclick="calcular()">Calcular cansaço</button>
+</body>
+</html>
+
+<script>
+function calcular(){
+    var distanciaN = Number(distancia.value)
+    if (distanciaN <= 10){
+        if (transporte.value == 'carro' || transporte.value == 'metro' || transporte.value == 'onibus'){
+        alert("Tá tranks...")
+        }
+        else{
+            alert("É... um pouco cansado...")
+        }    
+    }
+    
+    if (distanciaN > 10){
+        if (transporte.value == 'carro'){
+            alert("É... um pouco cansado...")        
+        }
+        if (transporte.value == 'onibus' || transporte.value == 'metro'){
+        alert("Bem cansado ...")
+        }
+        if (transporte.value == 'bicicleta'){
+            alert("Vish ta só o po...")        
+        }
+    }
+}
+</script>

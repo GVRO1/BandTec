@@ -2,7 +2,7 @@ const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 
 class ArduinoDataRead {
-
+// Cria uma lista a 'listData'
     constructor(){
         this.listData = [];
     }
@@ -30,10 +30,14 @@ class ArduinoDataRead {
         }).then(arduinoCom => {
             
             let arduino = new SerialPort(arduinoCom, {baudRate: 9600});
-            
+            // Aqui que vai ser importante pra caramba
+            // Aqui é onde o node realiza a leitura na com do arduino
+
+            // Muito importante
             const parser = new Readline();
             arduino.pipe(parser);
             
+            // Atribui cada dado a um item na listData
             parser.on('data', (data) => {
                 this.listData.push(parseFloat(data));
             });

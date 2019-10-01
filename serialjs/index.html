@@ -32,6 +32,7 @@
 		context.canvas.height = 300;
         
         var configuration = {
+			// Define o tipo de grafico, no caso 'line' = Linha
 			type: 'line',
 			data: {
 				datasets: [{
@@ -40,7 +41,10 @@
 					type: 'line',
 					// Define a cor do preenchimento do grafico, mas a cor tem que ser
 					// em Hexadecimal
-					backgroundColor:"#f6fa00"
+					backgroundColor:"#f6fa00",
+					// Define a cor da linha 
+					// em Hexadecimal
+					borderColor:"#f6fa03"
 				}]
 			},
 			options: {
@@ -90,7 +94,8 @@
 
         function get_data(){
 
-            var http = new XMLHttpRequest();
+			var http = new XMLHttpRequest();
+			// Abre um servidor local no endereço abaixo
             http.open('GET', 'http://localhost:3000/api', false);
             http.send(null);        
 			
