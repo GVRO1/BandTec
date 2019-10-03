@@ -25,15 +25,15 @@
 </html>
 <script>
 function simular(){
-var integracao_estudante = Number(passageiro.value)/2;
-    if(passageiro.value == 'estudante' && passagem.value == 'integracao')){
-        mensagem.innerHTML = `<b>Valor da passagem escolhida: R$${integracao_estudante}</b>`
+var tipo_passageiro = passageiro.value;
+var metade =  Number(passagem.value)/2;
+    if(tipo_passageiro == 'estudante' || tipo_passageiro == 'idoso'){
+        mensagem.innerHTML = `<b>Valor da passagem escolhida: R$${metade}</b>`
     }
 
-    if(passageiro.value == 'idoso'){
-        mensagem.innerHTML = `<b>Valor da passagem escolhida: R$0,00</b>`
+    if(tipo_passageiro == 'comum'){
+       mensagem.innerHTML = `<b>Valor da passagem escolhida: R$${passagem.value}</b>`
     }
-    
-
-}
+console.log(metade);
+    }
 </script>
