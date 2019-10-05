@@ -5,19 +5,24 @@ body{
 
 }
 .cabecario{
-    background-color:rgb(36, 92, 196);
+    background-color:rgb(255, 255, 255);
     border-color: black;    
     border-bottom-width: 1px;
     text-align: center;
     height: 160px;
     width: 100%;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 119, 255);
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 
 }
+.logo{
+    width: 300px;
+    float: left;
+    /* display: inline-block; */
+}
 .menu{
     /* Define o fundo */
-    background-color: rgba(0, 13, 196, 0.692);
+    background-color: rgb(0, 124, 196);
     /* Define a letra */
     color:white;
     font-size: 120%;
@@ -80,11 +85,7 @@ body{
 }
 
 
-.logo{
-    width: 150px;
-    float: left;
-    /* display: inline-block; */
-}
+
 
 .nome_titulo{
     color:rgb(255, 255, 255);
