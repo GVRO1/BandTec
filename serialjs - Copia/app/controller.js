@@ -1,13 +1,18 @@
 const express = require('express');
 const { ArduinoData } = require('./serial')
+
 const router = express.Router();
+
 
 
 router.get('/', (request, response, next) => {
     //Pega os valores e soma 
     let sum = ArduinoData.List.reduce((a, b) => a + b, 0);
+     let sum2 = ArduinoData.List.reduce((a, b) => a + b, 0);
+
     // Depois divide eles pela quantidade de leituras feitas
     let average = (sum / ArduinoData.List.length).toFixed(2);
+     let average2 = (sum2 / ArduinoData.List.length).toFixed(2);
 
 // Cria e envia para uma API um objeto com as 3 variaveis abaixo 
 
@@ -15,12 +20,20 @@ router.get('/', (request, response, next) => {
         //Data é uma lista e recebe os valores lidos do arduino e os separa por virgula
         //Exemplo:       "data":[23,34,645,753,6453,543]
         data: ArduinoData.List,
+        data2: ArduinoData.List,
 
         // total recebe o tamanho da lista Arduinodata  
         total: ArduinoData.List.length,
 
         // isso aqui em baixo  
-        average: isNaN(average) ? 0 : average
+        average: isNaN(average) ? 0 : average,
+
+
+        // total recebe o tamanho da lista Arduinodata  
+        total2: ArduinoData.List.length,
+
+        // isso aqui em baixo  
+        average2: isNaN(average2) ? 0 : average2
         // é a mesma coisa que:
         // if(isNaN(average)) {
         //     return 0;
@@ -37,5 +50,7 @@ router.get('/', (request, response, next) => {
 });
 
 module.exports = router;
+
+
 
     

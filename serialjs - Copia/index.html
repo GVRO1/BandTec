@@ -18,10 +18,12 @@
 
 <body>
 	<section>
-		<h2>Média: <label id='average'>0.00</label></h2>
+		<h2>Média Sensor 1: <label id='average'>0.00</label></h2>
+		<h2>Média Sensor 2: <label id='average2'>0.00</label></h2>
 	</section>
 	<section style="width:100%">
 		<canvas id="chart"></canvas>
+		<canvas id="chart2"></canvas>
 	<section>
 	<script>
 
@@ -82,6 +84,7 @@
         };
         
 		var chart = new Chart(context, configuration);
+		var chart2 = new Chart(context, configuration);
 
         //Função para obter os dados de temperatura do server
         //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
@@ -104,10 +107,21 @@
             if (obj.data.length == 0){
                 return;
             }
+            if (obj.data2.length == 0){
+                return;
+            }
 
-            var _lastIndexTemp = this.lastIndexTemp;
-            this.lastIndexTemp = obj.data.length;
-            listTemp = obj.data.slice(_lastIndexTemp);
+			var _lastIndexTemp = this.lastIndexTemp;
+			
+			var _lastIndexTemp2 = this.lastIndexTemp2;
+			
+			this.lastIndexTemp = obj.data.length;
+			
+			this.lastIndexTemp2 = obj.data2.length;
+			
+			listTemp = obj.data.slice(_lastIndexTemp);
+			
+            listTemp2 = obj.data2.slice(_lastIndexTemp2);
 
             listTemp.forEach(data => {
                 //Máximo de 60 itens exibidos no gráfico
@@ -121,7 +135,19 @@
                 chart.update();
 			});
 			
-			document.getElementById('average').textContent = obj.average
+            listTemp2.forEach(data2 => {
+                //Máximo de 60 itens exibidos no gráfico
+                if (chart2.data2.labels.length == 10 && chart2.data2.datasets[0].data2.length == 10){
+                    chart2.data2.labels.shift();
+                    chart2.data2.datasets[0].data2.shift();
+                }
+
+                chart2.data2.labels.push(this.time++);
+                chart2.data2.datasets[0].data2.push(parseFloat(data2));
+                chart2.update();
+			});
+			
+			document.getElementById('average2').textContent = obj.average2
 		} 
 		
 		get_data();
