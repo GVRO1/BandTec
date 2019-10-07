@@ -1,13 +1,12 @@
-//float sensor1 = analogRead(A0);
-float sensor1 = 50;
-float sensor2 = 0;
+int sensor1 = 100;
+int sensor2 = 150;
 void setup() {
 Serial.begin(9600);
 }
 
 void loop() {
-sensor2 = sensor1 + 100;
-Serial.println(sensor1);
+Serial.print(sensor1);
+Serial.print(";");
 Serial.println(sensor2);
 delay(1000);
 }

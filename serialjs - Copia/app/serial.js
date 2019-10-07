@@ -2,16 +2,20 @@ const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 
 class ArduinoDataRead {
-// Cria uma lista a 'listData_sensor1'
+// Cria uma lista a 'listData'
     constructor(){
-        this.listData_sensor1 = [];
-        }
+        this.listData = [];
+        this.listData2 = [];
+    }
 
     get List() {
-        return this.listData_sensor1;
+        return this.listData;
     }
-    
-    
+
+    get List2() {
+        return this.listData2;
+    }
+
     SetConnection(){
 
         SerialPort.list().then(listSerialDevices => {
@@ -36,22 +40,15 @@ class ArduinoDataRead {
 
             // Muito importante
             const parser = new Readline();
-            const parser2 = new Readline();
-
             arduino.pipe(parser);
-            arduino.pipe(parser2);
-        
             
             // Atribui cada dado a um item na listData
             parser.on('data', (data) => {
-                //Converte string para numeros decimais
-                this.listData_sensor1.push(parseFloat(data));
+                var resultado =  data.split(";")
+                this.listData.push(parseFloat(resultado[0]));
+                this.listData2.push(parseFloat(resultado[1]));
             });
-            parser2.on('data2', (data2) => {
-                //Converte string para numeros decimais
-                this.listData_sensor2.push(parseFloat(data2));
-            });
-                       
+            
         }).catch(error => console.log(error));
     } 
 }
@@ -59,4 +56,4 @@ class ArduinoDataRead {
 const serial = new ArduinoDataRead();
 serial.SetConnection();
 
-module.exports.ArduinoData = {List: serial.List} 
+module.exports.ArduinoData = {List: serial.List,List2: serial.List2} 

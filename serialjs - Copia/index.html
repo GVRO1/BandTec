@@ -18,13 +18,21 @@
 
 <body>
 	<section>
-		<h2>Média Sensor 1: <label id='average'>0.00</label></h2>
-		<h2>Média Sensor 2: <label id='average2'>0.00</label></h2>
+		<h2>Média: <label id='average'>0.00</label></h2>
 	</section>
 	<section style="width:100%">
-		<canvas id="chart"></canvas>
+			<canvas id="chart"></canvas>
+		<section>
+	
+
+	<section>
+		<h2>Média: <label id='average2'>0.00</label></h2>
+	</section>
+	
+	<section style="width:100%">
 		<canvas id="chart2"></canvas>
 	<section>
+
 	<script>
 
 		var context = document.getElementById("chart").getContext("2d");
@@ -32,8 +40,64 @@
 		context.canvas.width = 1000;
 		// Muda a altura do grafico
 		context.canvas.height = 300;
+
+		var context2 = document.getElementById("chart2").getContext("2d");
+		// Muda a largura do grafico	
+		context2.canvas.width = 1000;
+		// Muda a altura do grafico
+		context2.canvas.height = 300;
         
         var configuration = {
+			// Define o tipo de grafico, no caso 'line' = Linha
+			type: 'line',
+			data: {
+				datasets: [{
+					// Escreve as proporções do grafico 
+					label: "Luminosidade x Tempo",
+					type: 'line',
+					// Define a cor do preenchimento do grafico, mas a cor tem que ser
+					// em Hexadecimal
+					backgroundColor:"#f6fa00",
+					// Define a cor da linha 
+					// em Hexadecimal
+					borderColor:"#f6fa03"
+				}]
+			},
+			options: {
+				scales: {
+					xAxes: [{
+						//type: 'value',
+				
+						scaleLabel: {
+							display: true,
+							// Escreve em baixo do eixo X
+							labelString: 'Segundos'
+						},
+						
+						distribution: 'series',
+                        ticks: {
+							beginAtZero:true							
+                        }
+					}],
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							// Escreve ao lado do eixo Y
+							labelString: 'Luminosidade'
+                        },
+                        ticks: {
+                            beginAtZero:true
+                        }
+					}]
+				},
+				animation: {
+					// Faz uma transiçãozinha
+					duration: 50
+				}
+			}
+		};
+		
+        var configuration2 = {
 			// Define o tipo de grafico, no caso 'line' = Linha
 			type: 'line',
 			data: {
@@ -84,7 +148,7 @@
         };
         
 		var chart = new Chart(context, configuration);
-		var chart2 = new Chart(context, configuration);
+		var chart2 = new Chart(context2, configuration2);
 
         //Função para obter os dados de temperatura do server
         //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
@@ -107,22 +171,10 @@
             if (obj.data.length == 0){
                 return;
             }
-            if (obj.data2.length == 0){
-                return;
-            }
 
-			var _lastIndexTemp = this.lastIndexTemp;
-			
-			var _lastIndexTemp2 = this.lastIndexTemp2;
-			
-			this.lastIndexTemp = obj.data.length;
-			
-			this.lastIndexTemp2 = obj.data2.length;
-			
+            var _lastIndexTemp = this.lastIndexTemp;
+            this.lastIndexTemp = obj.data.length;
 			listTemp = obj.data.slice(_lastIndexTemp);
-			
-            listTemp2 = obj.data2.slice(_lastIndexTemp2);
-
             listTemp.forEach(data => {
                 //Máximo de 60 itens exibidos no gráfico
                 if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10){
@@ -135,21 +187,25 @@
                 chart.update();
 			});
 			
-            listTemp2.forEach(data2 => {
+		 
+
+			var listTemp2 = obj.data2.slice(_lastIndexTemp);
+            listTemp2.forEach(data => {
                 //Máximo de 60 itens exibidos no gráfico
-                if (chart2.data2.labels.length == 10 && chart2.data2.datasets[0].data2.length == 10){
-                    chart2.data2.labels.shift();
-                    chart2.data2.datasets[0].data2.shift();
+                if (chart2.data.labels.length == 10 && chart2.data.datasets[0].data.length == 10){
+                    chart2.data.labels.shift();
+                    chart2.data.datasets[0].data.shift();
                 }
 
-                chart2.data2.labels.push(this.time++);
-                chart2.data2.datasets[0].data2.push(parseFloat(data2));
+                chart2.data.labels.push(this.time++);
+                chart2.data.datasets[0].data.push(parseFloat(data));
                 chart2.update();
 			});
 			
-			document.getElementById('average2').textContent = obj.average2
-		} 
+			document.getElementById('average2').textContent = obj.average2;
+			document.getElementById('average').textContent = obj.average;
 		
+		}
 		get_data();
 
         setInterval(() => {
