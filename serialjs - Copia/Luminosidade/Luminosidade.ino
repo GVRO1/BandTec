@@ -10,5 +10,5 @@ sensor2 = analogRead(A1);
 Serial.print(sensor1);
 Serial.print(";");
 Serial.println(sensor2);
-delay(1000);
+delay(500);
 }
