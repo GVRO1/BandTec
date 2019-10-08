@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Estruturas de repetição (While)</h2>
+    <button onclick="repetir_alerts()">Repetir alerts</button>
+    <button onclick="repetir_img()">Repetir imagens</button>
+    <div id="divfrases"></div>
+    <div id="img"></div>
+</body>
+</html>
+<script>
+function repetir_alerts(){
+    var contador = 0;
+    while(contador < 10){
+        divfrases.innerHTML += 'Algoritmos é vida!';
+        contador ++;
+    }
+}
+function repetir_img(){
+    var contador = 0;
+    while(contador < 10){
+        divfrases.innerHTML += '<img src="https://correio-cdn1.cworks.cloud/fileadmin/_processed_/5/f/csm_pericles_17da2dc14f.jpg">';
+        contador ++;
+    }
+}
+
+</script>

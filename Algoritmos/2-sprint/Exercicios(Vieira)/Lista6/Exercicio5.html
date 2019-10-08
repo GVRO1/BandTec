@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual a quantidade de titulos mundiais da FIFA? 
+    <input type="text" name="" id="titulo">
+    <button onclick="ver()">Ver troféus mundiais FIFA</button>
+    <div id="mensagem">
+    </div>
+</body>
+</html>
+<script>
+function ver(){
+    mensagem.innerHTML = "";
+    var contador = 0;
+    var n_titulo = Number(titulo.value)
+    if(n_titulo == 0){
+        mensagem.innerHTML += `<img src="https://cdn.foxsports.com.br/sites/foxsports-br/files/img/notes/blogpost/Felipe-Melo_Chorando_Palmeiras_Expulso_Gremio_Reuters_1280.jpg">`
+    }
+    else{
+        while(n_titulo > contador){
+            mensagem.innerHTML += `<img src="https://http2.mlstatic.com/trofeu-mundial-de-clubes-fifa-D_NQ_NP_150505-MLB25004872195_082016-F.jpg" alt="">`
+            contador++;
+        }
+    }
+}
+</script>

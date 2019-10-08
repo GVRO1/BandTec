@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Digite uma frase:
+    <input type="text" name="" id="frase" onkeyup="descreva()">
+    <br>
+    <div id="p_letra" style="display: none">A primeira letra é: <span id="primeira"></span></div>
+    <div id="u_letra" style="display: none">A ultima letra é <span id="ultima"></span></div>
+
+</body>
+</html>
+<script>
+function descreva(){
+var primeira_letra = frase.value[0];
+p_letra.style.display='block';
+primeira.innerHTML = primeira_letra;
+
+var ultima_letra = frase.value[frase.value.length - 1];
+u_letra.style.display='block';
+ultima.innerHTML = ultima_letra;
+}
+</script>

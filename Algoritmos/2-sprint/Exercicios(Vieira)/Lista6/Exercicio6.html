@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos elefantes?
+    <input type="text" name="" id="elefantes">
+    <button onclick="atazanar()">Atazanar Médium</button>
+    <div id="primeira"></div>
+</body>
+</html>
+<script>
+function atazanar(){
+    var n_elefantes = Number(elefantes.value);
+    var contador = 0;
+    var incomodam = 0;
+    var repetição = 1;
+    while (n_elefantes > repetição){
+            primeira.innerHTML += "1 elefante incomoda muita gente!<br>"
+            while(n_elefantes>contador){
+                primeira.innerHTML += `${contador} elefantes `
+                while(incomodam < n_elefantes){
+                primeira.innerHTML += `incomodam `
+                incomodam ++;
+            }
+            contador ++;
+        }
+        primeira.innerHTML += "muito mais! <br>"
+        repetição ++;
+        }
+    }
+        
+
+
+</script>
