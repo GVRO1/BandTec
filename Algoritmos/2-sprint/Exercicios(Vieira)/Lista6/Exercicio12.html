@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas vão entrar no carro? <input type="text" name="" id="pessoas">
+    <br>
+    Qual a capacidade do veiculo? <input type="text" name="" id="capacidade">
+
+    <button onclick="carona()">Partiu carona</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function carona(){
+        mensagem.innerHTML = ``
+        var ncapacidade = Number(capacidade.value)
+        var contador = 2
+        var npessoas = Number(pessoas.value)
+        mensagem.innerHTML += `Entrou o 1 passageiro (que é o passageiros)<br>`
+        
+        while(contador<= ncapacidade){
+            mensagem.innerHTML += `Entrou o ${contador} passageiro <br>`
+            contador ++;
+        }
+        if(npessoas > ncapacidade){
+            while(contador < npessoas + 1){
+            mensagem.innerHTML += `O ${contador} passageiro terá que esperar<br>`
+            contador ++;
+        }   
+        }
+    }
+</script>
+<!-- 12. Incremente a 9ª questão de tal forma que:
+a) Também tenha um campo no qual o usuário indique a capacidade de passageiros que o veículo suporta
+b) Ao clicar no botão, as frases só começam a mostrar que o passageiro terá que esperar quando a capacidade indicada em a) for excedida -->

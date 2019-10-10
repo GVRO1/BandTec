@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos onibus precisa pegar? <input type="text" name="" id="onibus">
+    <br>
+    Quantos trens precisa pegar? <input type="" name="" id="trem">
+    <br>    
+    Quantos metros precisa pegar? <input type="text" name="" id="metro">
+    <br>   
+    <button onclick="partiu()">Partiu trajeto</button>
+    <div id="onibus_mensagem"></div>
+    <div id="trem_mensagem"></div>
+    <div id="metro_mensagem"></div>
+</body>
+</html>
+<script>
+    function partiu(){
+        var n_onibus = Number(onibus.value);
+        var n_trem = Number(trem.value);
+        var n_metro = Number(metro.value);
+        var contador_onibus = 1;
+        var contador_trem = 1;
+        var contador_metro = 1;
+        onibus_mensagem.innerHTML = ` `;
+        trem_mensagem.innerHTML = ` `;
+        metro_mensagem.innerHTML= ` `;
+        
+        while(n_onibus>=contador_onibus){
+        onibus_mensagem.innerHTML += `Pegando ${contador_onibus} buzão <br>`;
+        if(contador_onibus == 2){
+        onibus_mensagem.innerHTML += `Começando a cansar<br>`;       
+        }
+        if(contador_onibus == 3){
+        onibus_mensagem.innerHTML += `Já cansada<br>`;
+        }
+        onibus_mensagem.style.color = 'red';
+        contador_onibus ++;
+        }
+        
+        while(n_trem>=contador_trem){
+        trem_mensagem.innerHTML += `Pegando ${contador_trem} trem <br>`;
+        if(contador_trem == 2){
+        onibus_mensagem.innerHTML += `Começando a cansar<br>`;       
+        }
+        if(contador_trem == 3){
+        trem_mensagem.innerHTML += `Já cansada<br>`;
+        }
+        trem_mensagem.style.color = 'green';
+        contador_trem ++;
+        }
+        while(n_metro>=contador_metro){
+        metro_mensagem.innerHTML += `Pegando ${contador_metro} metro <br>`;
+        if(contador_metro == 2){
+        metro_mensagem.innerHTML += `Começando a cansar<br>`;       
+        }
+        if(contador_metro == 3){
+        metro_mensagem.innerHTML += `Já cansada<br>`;
+        }
+        metro_mensagem.style.color = 'blue';
+        contador_metro ++;
+        }
+    }
+</script>
+<!-- 11. Incremente a questão anterior.
+a) Na 2ª vez que estiver em determinado meio de transporte, exiba do lada frase o texto "Começando a cansar"
+b) A partir da 3ª vez que estiver em determinado meio de transporte, exiba do lada frase o texto "Já cansado!" -->

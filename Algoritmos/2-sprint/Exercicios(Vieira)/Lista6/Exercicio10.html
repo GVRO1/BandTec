@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos onibus precisa pegar? <input type="text" name="" id="onibus">
+    <br>
+    Quantos trens precisa pegar? <input type="" name="" id="trem">
+    <br>    
+    Quantos metros precisa pegar? <input type="text" name="" id="metro">
+    <br>   
+    <button onclick="partiu()">Partiu trajeto</button>
+    <div id="onibus_mensagem"></div>
+    <div id="trem_mensagem"></div>
+    <div id="metro_mensagem"></div>
+</body>
+</html>
+<script>
+    function partiu(){
+        var n_onibus = Number(onibus.value);
+        var n_trem = Number(trem.value);
+        var n_metro = Number(metro.value);
+        var contador_onibus = 1;
+        var contador_trem = 1;
+        var contador_metro = 1;
+        onibus_mensagem.innerHTML = ` `;
+        trem_mensagem.innerHTML = ` `;
+        metro_mensagem.innerHTML= ` `;
+        
+        while(n_onibus>=contador_onibus){
+        onibus_mensagem.innerHTML += `Pegando ${contador_onibus} buzão <br>`;
+        onibus_mensagem.style.color = 'red';
+        contador_onibus ++;
+        }
+        while(n_trem>=contador_trem){
+        trem_mensagem.innerHTML += `Pegando ${contador_trem} trem <br>`;
+        trem_mensagem.style.color = 'green';
+        contador_trem ++;
+        }
+        while(n_metro>=contador_metro){
+        metro_mensagem.innerHTML += `Pegando ${contador_metro} metro <br>`;
+        metro_mensagem.style.color = 'blue';
+        contador_metro ++;
+        }
+    }
+</script>
+<!-- 10. Crie um programa em HTML/JS que simule o trajeto que um estudante do extremo leste da capital faz para chegar na Bandtec:
+a) Pergunte ao usuário quantos ônibus precisa pegar
+b) Pergunte ao usuário quantos trens precisa pegar
+c) Pergunte ao usuário quantos metrôs precisa pegar
+d) Ao clicar num botão "#Partiu Trajeto"...
+e) Deve exibir, abaixo do botão, na cor vermelha, frases como estas, de acordo com a quantidade de ônibus indicadas em a)
+    Pegando o 1º buzão
+    Pegando o 2º buzão
+f) Deve exibir, abaixo das frases de e), na cor verde, frases como estas, de acordo com a quantidade de trens indicadas em b)
+    Pegando o 1º trem
+    Pegando o 2º trem
+g) Deve exibir, abaixo das frases de f), na cor azul, frases como estas, de acordo com a quantidade de metros indicadas em c)
+    Pegando o 1º metrô
+    Pegando o 2º metrô
+ -->
