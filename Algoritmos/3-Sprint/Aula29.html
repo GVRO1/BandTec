@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Estrturas de repetição (for)</h2>
+    <button onclick="repetir_alerts()">Repetir Alerts</button>
+    <br>
+    <button onclick="repetir_html()">Repetir na pagina</button>
+    <br>
+    <button onclick="repetir_imagens()">Desligar Frizzer</button>
+    <div id="div_frases"></div>
+    <div id="div_imagens"></div>
+</body>
+</html>
+<script>
+function repetir_alerts(){
+    for (var contador = 0; contador<10; contador ++){
+        alert("Algoritmos é vida");
+    }
+}
+function repetir_html(){
+    div_frases.innerHTML = " "
+    for (var contador = 0; contador<10; contador ++){
+        div_frases.innerHTML += "Algoritmos é vida <br>";
+    }
+}
+function repetir_imagens(){
+    div_imagens.innerHTML = " "
+    for (var contador = 0; contador<10; contador ++){
+
+        div_imagens.innerHTML += `<img src="https://conteudo.imguol.com.br/c/blogs/f6/2019/10/25/jacquin-1572016453115_v2_300x225.jpg" alt=""> <br>`;
+    }
+}
+</script>

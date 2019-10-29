@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual o peso? <input onkeyup="verificar()" type="text" name="" id="peso">
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+function verificar(){
+    var pesoN = Number(peso.value)
+    if(pesoN <= 13.5){
+        mensagem.innerHTML = 'Abaixo do peso'
+    }
+    else if (pesoN == 18.3){
+        mensagem.innerHTML = 'Peso perfeito'
+    }
+    else if (pesoN > 13.5 && pesoN <= 21.2){
+        mensagem.innerHTML = 'Peso na média'
+    }
+    else {
+        mensagem.innerHTML = 'Acima do peso'
+    }
+
+}
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual a temperatura <input onkeyup="verificar()" type="text" name="" id="temp">
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+function verificar(){
+var temperatura = Number(temp.value);
+if(temperatura < 14){
+mensagem.innerHTML = 'Congelante'
+}
+else if(temperatura > 31){
+mensagem.innerHTML = 'Calor escaldante'
+}
+else if(temperatura > 24 && temperatura <= 31){
+mensagem.innerHTML = 'Com Calor'
+}
+else if(temperatura >= 14 && temperatura <= 21){
+mensagem.innerHTML = 'Com Frio'
+}
+else{
+mensagem.innerHTML = 'Confortavel'
+}
+
+}
+</script>

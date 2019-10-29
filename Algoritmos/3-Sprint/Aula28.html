@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h2>Else-if</h2>
+        <ul>
+            <li>Com frio (até menos de 21ºC) </li>
+            <li>Confortáveis (entre 21ºC e 24ºC) </li>
+            <li>Com calor (mais de 24ºC) </li>
+        </ul>
+        Temperatura atual:
+        <input type="text" onkeyup="clima()" name="" id="temperatura">
+        <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+function clima(){
+    var valor_temperatura = Number(temperatura.value);
+    var resultado;
+    if (valor_temperatura < 21){
+        resultado = "Com frio";
+    }
+    else if (valor_temperatura >24 ){
+        resultado = "Com calor";
+    }
+    else {
+        resultado = "Confortavel";
+    }
+    div_resultado.innerHTML = resultado;
+}
+
+</script>
