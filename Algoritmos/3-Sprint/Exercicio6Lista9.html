@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos elefantes <input type="text" name="" id="numeros">  
+    <button onclick="atazanar()">atazanar médium</button>
+    <div id="mensagem"></div>
+</body>
+<script>
+function atazanar(){
+    var n = Number(numeros.value);
+    mensagem.innerHTML = " ";
+    for(var contador = 2; n >= contador; contador++){
+        mensagem.innerHTML += "1 elefante incomoda muita gente! <br>";
+        mensagem.innerHTML += `${contador} elefantes,`
+        for(var contador_incomodam = 0; contador > contador_incomodam; contador_incomodam ++){
+            mensagem.innerHTML += `incomodam,`
+        }
+        mensagem.innerHTML += `muito mais!<br>`
+    }
+}
+
+</script>
+</html>
