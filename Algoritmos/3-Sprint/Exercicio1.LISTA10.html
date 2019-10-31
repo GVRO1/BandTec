@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual seu numero da sorte?(entre 0  e 100) <br>
+    <input type="text" name="" id="n">
+
+    <button onclick="valendo()">Valendo</button>
+</body>
+<script>
+function valendo(){
+    var sorteado ;
+    var numero = Number(n.value)
+    var contador = 0;
+    while(sorteado != numero){
+     sorteado = parseInt(Math.random()*101)
+     contador ++  
+    }
+    if (sorteado == numero) {
+        alert(`Foram necessarios ${contador} sorteios`)
+        }
+        contador++
+    
+}
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual a idade? <input onkeyup="start()" type="text" name="" id="idade">
+    <div id="mensagem"></div>
+</body>
+<script>
+    function start(){
+         idadeN = Number(idade.value)
+         mensagem.innerHTML = ' ';
+        for(var contador = 0; contador <= idadeN;contador ++){
+            
+            if(contador < 5){
+                mensagem.innerHTML += `${contador} anos (Primeira infância)<br>`
+            }
+            else if (contador < 7) {
+                mensagem.innerHTML += `${contador} anos (Pré-escolar)<br>`
+            }
+            else if (contador < 11) {
+                mensagem.innerHTML += `${contador} anos (Segunda infância)<br>`
+            }
+            else if (contador < 19) {
+                mensagem.innerHTML += `${contador} anos (Adolescência)<br>`
+            }
+            else if (contador < 51) {
+                mensagem.innerHTML += `${contador} anos (Adulto)<br>`
+            }
+            else if (contador < 101) {
+                mensagem.innerHTML += `${contador} anos (Melhor idade)<br>`
+            }
+            else{
+                mensagem.innerHTML += `${contador} anos (Matusalém)<br> `
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Parte inteira de um número</h2>   
+  <input type="text" name="" id="numero" onkeyup="parte_inteira()">
+  <div id="div_inteiro"></div>
+  <div id="div_numero"></div>
+</body>
+</html>
+<script>
+function parte_inteira(){
+    var numero_inteiro = parseInt(numero.value);
+    var numero_quebrado = parseFloat(numero.value);
+    div_inteiro.innerHTML =  `Inteiro: ${numero_inteiro}`
+    div_numero.innerHTML =  `Quebrado: ${numero_quebrado}`
+}
+</script>
