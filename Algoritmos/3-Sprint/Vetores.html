@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Vetores (ou Array)</h2>
+    <input type="number" id="destino" onkeyup="ver_destino()">
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+var destinos = ['Grécio','Japão','Noruega','Chile','Peru'];
+function ver_destino(){
+    var indice_destino = parseInt(destino.value);
+    var encontrado = destinos[indice_destino - 1];
+    mensagem.innerHTML = encontrado;
+    }
+</script>
