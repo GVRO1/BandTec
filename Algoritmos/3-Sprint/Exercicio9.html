@@ -38,14 +38,20 @@ Preço da compra: <input type="text" name="" id="valor">
 <button onclick="relatorio()">Relatório de estoque</button>
 <div id="mensagem"></div>
 <div id="produtos"></div>
+<div id="caro"></div>
+<div id="barato"></div>
 
 
 <script>
 var nomes = []
 var valores = []
 
-function cadastrar(){
+ var p_caro;
+ var p_barato;
+ var min;
+ var max;
     var preco = Number(valor.value)
+function cadastrar(){
     nomes.push(nome.value);
     valores.push(preco);
     console.log("preco", valores) 
@@ -53,13 +59,30 @@ function cadastrar(){
 }
 
 function relatorio(){
+    if(valores.length == 1){
+         p_caro = valores[0];
+         p_barato = valores[0];
+        min = preco;
+        max = preco;
+    }
+    if(min > preco){
+        min = preco;
+        p_barato = valores[valores.length - 1];
+    }
+    if(max < preco){
+        max = preco;
+        p_caro = valores[valores.length -1];
+    }
+
 mensagem.innerHTML = `Tota de produtos: ${nomes.length}`
 
 for(var indice = 0; indice < nomes.length; indice ++ ){
 produtos.innerHTML += `<br>Produtos ${indice + 1}: ${nomes[indice]} <br>
-                        Preço de Compra: R$${valores[indice]}. Vender por ${valores[indice] *1.25}
+                        Preço de Compra: R$${valores[indice]}. Vender por ${valores[indice] * 1.25}
 `
 }
+caro.innerHTML = `O produto mais caro é o ${p_caro}`
+barato.innerHTML = `O produto mais barato é o ${p_barato}`
 }
 </script>
 
