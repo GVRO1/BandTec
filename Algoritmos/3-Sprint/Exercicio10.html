@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        10 (clássico). Crie um programa o qual:
+        a) Tenha um campo "Digite um número qualquer".
+        b) Tenha um botão "Analisar histórico". Ao clicar nele, deve aparecer um histórico dos números cadastrados, bem como o maior e o menor, como no exemplo a seguir:
+           1º Número: 15
+           2º Número: 22
+           3º Número: 19
+           4º Número: 5
+        
+           Maior: 22
+           Menor: 5
+            <hr>
+           Digite um numero qualquer: <input type="text" name="" id="numero">
+        <button onclick="adicionar()">Adicionar</button>
+        <button onclick="analisar()">Analisar histórico</button>
+
+        <div id="mensagem"></div>
+        <div id="maior"></div>
+        <div id="menor"></div>
+</body>
+<script>
+var numeros = [];
+
+var min;
+var max;
+
+function adicionar(){
+var item = Number(numero.value)
+numeros.push(item);
+console.log(numeros);
+if(numeros.length == 1){
+    min = item;
+    max = item;
+    }
+
+if(min > item){
+    min = item;
+}
+else if(max < item){
+    max = item
+}
+
+console.log("minimo",min);
+console.log("Maximo",max);
+}
+
+
+function analisar(){
+    mensagem.innerHTML = " ";
+    for(var i = 0; i < numeros.length; i ++){
+        mensagem.innerHTML += `${i +1}º Numero: ${numeros[i]}<br>`
+    }
+    
+    maior.innerHTML = `Maior = ${max}`
+    menor.innerHTML = `Menor = ${min}`
+   
+}
+
+</script>
+</html>

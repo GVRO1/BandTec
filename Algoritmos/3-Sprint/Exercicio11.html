@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+        11. Crie um programa que ajude o Tiago Nizante a parar de fumar. Esse programa...
+        a) Tem um campo no qual o usuário informa quantos cigarros fumou no dia
+        b) Tem um botão "Registar fumo do dia". Ao clicar nele, deve aparecer (ou atualizar, caso já esteja em exibição), um relatório sobre seu hábito de fumar como o do exemplo abaixo:
+          
+           1º Dia: 4 cigarros
+           2º Dia: 2 cigarros
+           3º Dia: 5 cigarros
+           4º Dia: 9 cigarros
+           5º Dia: 1 cigarros
+         
+           Dia em que menos fumou: 5º dia
+           Dia em que mais fumou: 4º dia
+<hr>
+
+Quantos cigarros você fumou hoje? <input type="text" name="" id="cigarro"> <button onclick="registrar()">Registrar fumo do dia</button>
+<div id="mensagem"></div>
+<div id="maximo"></div>
+<div id="minimo"></div>
+<script>
+var cigarros = []
+var max;
+var dia_max;
+var dia_min;
+var min;
+function registrar(){
+    mensagem.innerHTML = " "
+    var diario = cigarro.value
+    var tamanho = cigarros.length
+    cigarros.push(diario)
+    console.log(cigarros);
+    if(cigarros.length == 1){
+        dia_min = 1;
+        dia_max = 1;
+        min = diario;
+        max = diario;
+    }
+    if(min > diario){
+        min = diario;
+        dia_min = cigarros.length +1;
+    }
+    if(max < diario){
+        max = diario;
+        dia_max = cigarros.length +1;
+    }
+    for(var i = 0; i < cigarros.length; i ++){
+    mensagem.innerHTML += `${i + 1}º Dia: ${cigarros[i]} cigarros <br>`
+    }
+    console.log("min",min);
+    console.log("max",max);
+    console.log("dia_min",dia_min);
+    console.log("dia_max",dia_max);
+    console.log("tamanho",tamanho);
+    maximo.innerHTML = `Dia que ele mais fumou:${dia_max}`
+    minimo.innerHTML = `Dia que ele menos fumou:${dia_min}`
+}
+
+</script>
+
+
+</body>
+</html>

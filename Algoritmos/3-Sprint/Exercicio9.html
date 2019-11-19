@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    9. Crie um pequeno sistema de loja eletrônica o qual:
+a) Tenha um campo "Nome do produto" e outro "Preço de compra"
+b) Tenha um botão "Cadastrar". Ao clicar nele, o nome e preço ficam cadastrados em algum lugar, por enquanto invisível ao usuário
+c) Tenha um botão "Relatório de estoque". Ao clicar nele, deve aparecer uma listagem dos produtos cadastrados com seu valor para venda, como no exemplo a seguir:
+
+   Total de produtos: 2
+
+   Produto 1: Leite de arroz
+   Preço de compra: R$1.50. Vender por R$1,87
+
+   Produto 2: Caixa de chocolates
+   Preço de compra: R$9.00. Vender por R$11,25
+
+O preço de venda é sempre o valor da compra mais 25%. Ou seja, basta multiplicar o preço de compra por 1,25.
+
+#FicaDica: De repente você pode precisar de 2 vetores aqui ;)
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Nome Produto: <input type="text" name="" id="nome"> <br>
+Preço da compra: <input type="text" name="" id="valor">
+<button onclick="cadastrar()">Cadastrar</button>
+<button onclick="relatorio()">Relatório de estoque</button>
+<div id="mensagem"></div>
+<div id="produtos"></div>
+
+
+<script>
+var nomes = []
+var valores = []
+
+function cadastrar(){
+    var preco = Number(valor.value)
+    nomes.push(nome.value);
+    valores.push(preco);
+    console.log("preco", valores) 
+    console.log("Nomes", nomes)
+}
+
+function relatorio(){
+mensagem.innerHTML = `Tota de produtos: ${nomes.length}`
+
+for(var indice = 0; indice < nomes.length; indice ++ ){
+produtos.innerHTML += `<br>Produtos ${indice + 1}: ${nomes[indice]} <br>
+                        Preço de Compra: R$${valores[indice]}. Vender por ${valores[indice] *1.25}
+`
+}
+}
+</script>
+
+
+</body>
+</html>
